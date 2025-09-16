@@ -2,6 +2,16 @@
 
 This repository provides a dual-purpose setup for both DevContainer-based TypeScript development and personal dotfiles configuration.
 
+## Quick Start with DevPod
+
+```bash
+# Use this repository as a DevContainer template
+devpod up https://github.com/sammons2/sammons-devpod-config
+
+# Or with an existing project, use as dotfiles
+devpod up <your-project> --dotfiles https://github.com/sammons2/sammons-devpod-config
+```
+
 ## Structure
 
 - `.devcontainer/` - DevContainer configuration for TypeScript development
@@ -51,7 +61,7 @@ You can use this repository as a standalone dotfiles configuration on any Linux 
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/sammons-devpod-config.git ~/.dotfiles
+git clone https://github.com/sammons2/sammons-devpod-config.git ~/.dotfiles
 
 # Navigate to the directory
 cd ~/.dotfiles
