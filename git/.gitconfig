@@ -1,0 +1,26 @@
+[user]
+	name = Sammons
+	email = ben@sammons.io
+
+[core]
+	editor = nano
+	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+
+[push]
+	default = simple
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	lg = log --oneline --graph --decorate --all
+
+[color]
+	ui = auto

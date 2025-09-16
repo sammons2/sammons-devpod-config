@@ -1,0 +1,32 @@
+{
+  "name": "TypeScript Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-24-bookworm",
+  "remoteUser": "node",
+  "forwardPorts": [3000, 8080, 5173],
+  "containerEnv": {
+    "NODE_ENV": "development"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/home/node/.config,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude,target=/home/node/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/home/node/.aws,type=bind,consistency=cached"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
+  },
+  "postCreateCommand": {
+    "Install mise": "curl https://mise.run | sh",
+    "Configure mise": "~/.local/bin/mise use --global node@24",
+    "Install Claude Code": "npm install -g @anthropic-ai/claude-code",
+    "Install dotfiles": "./install.sh"
+  },
+  "postStartCommand": "gh auth status || echo 'Run gh auth login if needed'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
